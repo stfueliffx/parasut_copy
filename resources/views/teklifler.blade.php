@@ -21,7 +21,8 @@
                                                                         name="edit_date" id="edit_date"></li>
                     <li class="list-group-item">VADE TARİHİ
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <button type="button" onclick="expiryDate(0)" class="btn btn-secondary ml-5">AYNI GÜN</button>
+                            <button type="button" onclick="expiryDate(0)" class="btn btn-secondary ml-5">AYNI GÜN
+                            </button>
                             <button type="button" onclick="expiryDate(7)" class="btn btn-secondary">7 GÜN</button>
                             <button type="button" onclick="expiryDate(14)" class="btn btn-secondary">14 GÜN</button>
                             <button type="button" onclick="expiryDate(30)" class="btn btn-secondary">30 GÜN</button>
@@ -30,7 +31,8 @@
                         </div>
                     </li>
                     <li class="list-group-item">
-                        <button type="button" onclick="showCurrencies()" id="currencyButton" class="btn btn-outline-danger">DÖVİZ DEĞİŞTİR
+                        <button type="button" onclick="showCurrencies()" id="currencyButton"
+                                class="btn btn-outline-danger">DÖVİZ DEĞİŞTİR
                         </button>
                         <select id="currency" name="currency" style="display: none;">
                             <option>TL</option>
@@ -38,7 +40,9 @@
                             <option>Euro</option>
                             <option>Sterlin</option>
                         </select>
-                        <button type="button" id="offerButton" onclick="showOfferInfo()" class="btn btn-outline-danger">SİPARİŞ BİLGİSİ EKLE</button>
+                        <button type="button" id="offerButton" onclick="showOfferInfo()" class="btn btn-outline-danger">
+                            SİPARİŞ BİLGİSİ EKLE
+                        </button>
                         <div id="offerInfo" style="display: none;">
                             <input type="text" class="form-control" id="no"
                                    name="no">
@@ -101,7 +105,8 @@
                                         <option>yıl</option>
                                         <option>diğer</option>
                                     </select></td>
-                                <td><input type="text" class="form-control" id="price" name="products[0][price]" placeholder="0,00">
+                                <td><input type="text" class="form-control" id="price" name="products[0][price]"
+                                           placeholder="0,00">
                                 </td>
                                 <td><select id="tax" name="tax">
                                         <option>%18</option>
@@ -109,7 +114,8 @@
                                         <option>%1</option>
                                         <option>%0</option>
                                     </select></td>
-                                <td><input type="text" class="form-control" id="total_price" name="products[0][total_price]"
+                                <td><input type="text" class="form-control" id="total_price"
+                                           name="products[0][total_price]"
                                            placeholder="0,00"></td>
                             </tr>
 
@@ -118,7 +124,7 @@
                     </li>
                 </ul>
                 <button type="button" id="addNewRow" class="btn btn-warning">YENİ SATIR EKLE</button>
-                <button type="button" class="btn btn-dark">×</button>
+                <button type="button" id="deleteRow" class="btn btn-dark">×</button>
 
                 <BR><BR>
                 <button type="button" class="btn btn-success">KAYDET</button>
@@ -146,13 +152,15 @@
         x = document.getElementById("currencyButton");
         x.style.display = "none";
     }
+
     function showOfferInfo() {
         var x = document.getElementById("offerInfo");
         x.style.display = "block";
         x = document.getElementById("offerButton");
         x.style.display = "none";
     }
-    function expiryDate(days){
+
+    function expiryDate(days) {
         var result = new Date(Date.now());
         result.setDate(result.getDate() + days);
         console.log(result.toISOString().slice(0, 10));
@@ -163,10 +171,11 @@
     var i = 0;
     $("#addNewRow").click(function () {
         ++i;
-        $("#products").append('<tr>                                <td><input type="text" class="form-control" id="item" name="products[' + i +'][item]"></td>                                <td><input type="text" class="form-control" id="amount" name="products[' + i +'][amount]"                                           placeholder="1,00"></td>                                <td><select id="unit" name="products[' + i +'][unit]">                                        <option>adet</option>                                        <option>ay</option>                                        <option>çift</option>                                        <option>çuval</option>                                        <option>dakika</option>                                        <option>desilitre</option>                                        <option>desimetre</option>                                        <option>file</option>                                        <option>gram</option>                                        <option>gün</option>                                        <option>hafta</option>                                        <option>kamyon</option>                                        <option>kilogram</option>                                        <option>desimetre</option>                                        <option>koli</option>                                        <option>litre</option>                                        <option>metre</option>                                        <option>metrekare</option>                                        <option>metreküp</option>                                        <option>miligram</option>                                        <option>milimetre</option>                                        <option>paket</option>                                        <option>palet</option>                                        <option>poşet</option>                                        <option>saat</option>                                        <option>sandık</option>                                        <option>saniye</option>                                        <option>santimetre</option>                                        <option>ton</option>                                        <option>yıl</option>                                        <option>diğer</option>                                    </select></td>                                <td><input type="text" class="form-control" id="price" name="products[' + i +'][price]" placeholder="0,00">                                </td>                                <td><select id="tax" name="tax">                                        <option>%18</option>                                        <option>%8</option>                                        <option>%1</option>                                        <option>%0</option>                                    </select></td>                                <td><input type="text" class="form-control" id="total_price" name="products[' + i +'][total_price]"                                           placeholder="0,00"></td>                            </tr>');
+        $("#products").append('<tr id="row' + i + '">                                <td><input type="text" class="form-control" id="item" name="products[' + i + '][item]"></td>                                <td><input type="text" class="form-control" id="amount" name="products[' + i + '][amount]"                                           placeholder="1,00"></td>                                <td><select id="unit" name="products[' + i + '][unit]">                                        <option>adet</option>                                        <option>ay</option>                                        <option>çift</option>                                        <option>çuval</option>                                        <option>dakika</option>                                        <option>desilitre</option>                                        <option>desimetre</option>                                        <option>file</option>                                        <option>gram</option>                                        <option>gün</option>                                        <option>hafta</option>                                        <option>kamyon</option>                                        <option>kilogram</option>                                        <option>desimetre</option>                                        <option>koli</option>                                        <option>litre</option>                                        <option>metre</option>                                        <option>metrekare</option>                                        <option>metreküp</option>                                        <option>miligram</option>                                        <option>milimetre</option>                                        <option>paket</option>                                        <option>palet</option>                                        <option>poşet</option>                                        <option>saat</option>                                        <option>sandık</option>                                        <option>saniye</option>                                        <option>santimetre</option>                                        <option>ton</option>                                        <option>yıl</option>                                        <option>diğer</option>                                    </select></td>                                <td><input type="text" class="form-control" id="price" name="products[' + i + '][price]" placeholder="0,00">                                </td>                                <td><select id="tax" name="tax">                                        <option>%18</option>                                        <option>%8</option>                                        <option>%1</option>                                        <option>%0</option>                                    </select></td>                                <td><input type="text" class="form-control" id="total_price" name="products[' + i + '][total_price]"                                           placeholder="0,00"></td>                            </tr>');
     });
-    $(document).on('click', '.remove-input-field', function () {
-        $(this).parents('tr').remove();
+    $("#deleteRow").click(function () {
+        $('#row' + i).remove();
+        --i;
     });
 </script>
 </body>

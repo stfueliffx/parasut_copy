@@ -5,54 +5,58 @@
     <meta charset="UTF-8">
     <title></title>
 </head>
-<body>
+<body style="background-color: #F9F3EC">
 <h1>Teklifler</h1>
 <div class="d-flex justify-content-start">
-    <button type="button" class="btn btn-light">Cevap Beklenenler</button>
-    <button type="button" class="btn btn-light">Onaylananlar</button>
-    <button type="button" class="btn btn-light">Reddedilenler</button>
-    <button type="button" class="btn btn-light">Tümü</button>
-    <form>
+    <button type="button" class="btn btn-warning ml-2">CEVAP BEKLENENLER</button>
+    <button type="button" class="btn btn-warning ml-2">ONAYLANANLAR</button>
+    <button type="button" class="btn btn-warning ml-2">REDDEDİLENLER</button>
+    <button type="button" class="btn btn-warning ml-2">TÜMÜ</button>
+    <form class="h-25">
         <select>
             <option>filtrele</option>
             <option>fatura durumu</option>
             <option>düzenleme tarihi</option>
         </select>
     </form>
-    <input type="text" placeholder="Ara..." id="ember1461" class="ember-text-field ember-view ml-auto">
-    <a href="/teklif"> <button type="button" class="btn btn-dark ml-auto">Yeni Teklif Oluştur</button></a>
+    <input type="text" placeholder="Ara..." id="ember1461" class="ember-text-field ember-view ml-auto w-100">
+    <a href="/teklif"> <button type="button" class="btn btn-outline-success mr-2" data-mdb-ripple-color="dark">Teklif Oluştur</button></a>
 
 </div>
-<table class="table table-striped">
-    <thead>
-    <tr>
-        <th scope="col">teklif açıklaması</th>
-        <th scope="col">fatura</th>
-        <th scope="col">düzenleme tarihi</th>
-        <th scope="col">teklif toplam</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <th scope="row"></th>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <th scope="row"></th>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <th scope="row"></th>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    </tbody>
-</table>
+<div class="card m-2">
+    <div class="card-body">
+        <table class="table table-striped mt-2">
+            <thead>
+            <tr>
+                <th scope="col">Teklif Açıklaması</th>
+                <th scope="col">Fatura</th>
+                <th scope="col">Düzenleme Tarihi</th>
+                <th scope="col">Teklif Toplam</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
